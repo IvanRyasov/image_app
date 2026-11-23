@@ -15,7 +15,7 @@ import json
 import urllib.request
 
 app = Flask(__name__)
-app.secret_key = 'super_secret_key_for_session'
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # Загрузка легковесной нейросети для классификации (MobileNet V2)
 model = models.mobilenet_v2(pretrained=True)
